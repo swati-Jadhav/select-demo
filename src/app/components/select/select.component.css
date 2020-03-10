@@ -1,0 +1,53 @@
+
+#ResetBtn , #ClearBtn {
+    border:none;
+    color:#000; 
+    font-weight:bold; 
+    padding: 10px 15px;  
+    font-size:15px;
+}
+#SubmitBtn {
+    border:none;
+    color:#00ffcc;
+    font-weight:bold; 
+    padding: 10px 15px;  
+    font-size:15px;    
+}
+
+/* You can add global styles to this file, and also import other style files */
+form{
+    width:80%;
+}
+form .dropdown-btn {
+    background-color: #fff;
+}
+form .checkbox{
+    margin-top:10px;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+    background: #fff !important;
+    color: black !important;
+    border: 1px solid #fff !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item a {
+    display: none !important;
+}
+.multiselect-dropdown .dropdown-btn .selected-item:hover a {
+    color: #000 !important;
+    display: inline !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox] + div:before, 
+.multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+    color:#000 !important;
+    border: 2px solid #000 !important;
+}
+.multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+    background: #000 !important;
+} 
+.multiselect-item-checkbox input[type=checkbox]:checked + div {
+    color:#007bff !important;
+    font-weight: bold;
+}

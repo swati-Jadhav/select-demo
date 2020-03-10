@@ -1,0 +1,54 @@
+<section>
+    <div class="row">
+      <div class="col-md-12">
+        <div style="margin-bottom: 20px;">
+            <div class="row">
+              
+              <div class="col-md-8">
+                <h5>Option</h5>                
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" [checked]="singleSelection" (change)="toogleSingleSelection()"> Enable Single Selection
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" [checked]="showFilter" (change)="toogleShowFilter()"> Show Search Filter
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h5>Select</h5>
+                <form [formGroup]="myForm">
+                  
+                  <ng-multiselect-dropdown 
+                    name="color" 
+                    [placeholder]="'Colors'" 
+                    [data]="colors" 
+                    formControlName="color" 
+                    [disabled]="disabled" 
+                    [settings]="dropdownSettings" 
+                    (onDropDownClose)="onDropDownClose()" 
+                    (onSelect)="onItemSelect($event)" 
+                    (onSelectAll)="onSelectAll($event)">
+                  </ng-multiselect-dropdown>  
+                  
+                <div class="checkbox" *ngIf="singleSelection">
+                  <label>
+                    <input type="button" (click)="handleReset()" id="ResetBtn" class="btn" value="Reset">
+                  </label>
+                </div>
+                  <div class="checkbox" *ngIf="!singleSelection">
+                    <label>
+                      <input type="button" (click)="handleReset()" id="ClearBtn" class="btn" value="Clear">
+                      <input type="button" (click)="handleSubmit()" id="SubmitBtn" class="btn" value="Submit">
+                    </label>
+                  </div>
+                </form>
+                <p></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
