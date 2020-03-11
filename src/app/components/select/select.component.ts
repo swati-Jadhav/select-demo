@@ -15,7 +15,10 @@ export class SelectComponent implements OnInit {
   showFilter = true;
   singleSelection = false;
 
+  dropdownData: Array<any> = [];
   colors: Array<any> = [];
+  components: Array<any> = [];
+
   selectedItems: Array<any> = [];
   dropdownSettings: IDropdownSettings = {};
 
@@ -30,11 +33,26 @@ export class SelectComponent implements OnInit {
       { item_id: 5, item_text: 'Green' },
       { item_id: 6, item_text: 'Pink' }
     ];
+
+    this.components = [
+      { "title" : "Button", "path" : "demo-button"},
+      { "title" : "Selcection Control", "path" : "demo-selection-control"},
+      { "title" : "Input", "path" : "demo-input"},
+      { "title" : "Snackbar", "path" : "demo-snack-bar"},
+      { "title" : "Chips", "path" : "demo-chips"},
+      { "title" : "Progress Tabs", "path" : "demo-progress-tabs"},
+      { "title" : "Typography", "path" : "demo-tyography"},
+      { "title" : "Card", "path" : "demo-card"},
+      { "title" : "Pagination", "path" : "demo-pagination"}
+    ];
+
+    this.dropdownData = this.colors;
+
     this.dropdownSettings = {
       singleSelection: this.singleSelection,
       defaultOpen: false,
-      idField: 'item_id',
-      textField: 'item_text',
+      idField: (this.dropdownData == this.colors ) ? 'item_id' : 'path',
+      textField: (this.dropdownData == this.colors ) ? 'item_text' : 'title',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       enableCheckAll: !this.singleSelection,
@@ -77,6 +95,15 @@ export class SelectComponent implements OnInit {
     this.dropdownSettings = Object.assign({}, this.dropdownSettings, {
       singleSelection: this.singleSelection,
       enableCheckAll: !this.singleSelection
+    });
+  }
+
+  changeDropdownData(data : any) {
+    this.myForm.get('color').setValue([]);
+    this.dropdownData = data;
+    this.dropdownSettings = Object.assign({}, this.dropdownSettings, {
+      idField: (this.dropdownData == this.colors ) ? 'item_id' : 'path',
+      textField: (this.dropdownData == this.colors ) ? 'item_text' : 'title',
     });
   }
 

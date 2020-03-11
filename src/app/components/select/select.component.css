@@ -1,17 +1,27 @@
 
-#ResetBtn , #ClearBtn {
+
+.btn-list{
+    background-color: #fff;
+    margin-top: 10px;
+    text-align: right;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+    box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+}
+.btn-list .btn{
     border:none;
     color:#000; 
     font-weight:bold; 
-    padding: 10px 15px;  
-    font-size:15px;
+    padding: 18px 15px;
+    font-size: 16px; 
 }
 #SubmitBtn {
-    border:none;
-    color:#00ffcc;
-    font-weight:bold; 
-    padding: 10px 15px;  
-    font-size:15px;    
+    color:#00ffcc;  
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: none !important;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -23,6 +33,11 @@ form .dropdown-btn {
 }
 form .checkbox{
     margin-top:10px;
+}
+
+li.multiselect-item-checkbox {
+    border-bottom: 1px solid #ccc;
+    padding:8px 10px !important;
 }
 
 .multiselect-dropdown .dropdown-btn .selected-item {
